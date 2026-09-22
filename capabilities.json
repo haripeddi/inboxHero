@@ -1,6 +1,6 @@
 {
   "student": "Hari Peddi, cert-aai-2026-06-0048",
-  "repo": "https://github.com/hari-peddi/inboxHero",
+  "repo": "https://github.com/haripeddi/inboxHero",
   "system": {
     "framework": "crewai",
     "model": "config.py → ollama/llama3.2 (default); openai and gemini via INBOXHERO_LLM",

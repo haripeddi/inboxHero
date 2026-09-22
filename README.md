@@ -1,6 +1,6 @@
 # inboxHero
 
-**Public repository:** https://github.com/hari-peddi/inboxHero
+**Public repository:** https://github.com/haripeddi/inboxHero
 
 CrewAI multi-agent inbox assistant for a busy **VP of Product** (Alex Rivera, Northstar Labs): triage, grounded drafts, gated actions, standing prefs, hostile defense, dashboard, plus Part 8 agents over email + Slack + calendar, and an interactive X4 demo UI.
 
