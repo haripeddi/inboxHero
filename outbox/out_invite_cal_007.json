@@ -1,0 +1,16 @@
+{
+  "outbox_id": "out_invite_cal_007",
+  "in_reply_to": "msg_002",
+  "thread_id": "thr_invite_demo",
+  "from": "Alex Rivera <alex.rivera@northstarlabs.com>",
+  "to": "Maya Chen <maya.chen@northstarlabs.com>",
+  "subject": "Invitation: Demo sync execute",
+  "body": "Hi team,\n\nYou're invited to: Demo sync execute\nWhen: 2026-09-16T15:00:00-07:00 \u2192 2026-09-16T15:30:00-07:00\nAttendees: Maya Chen, Alex Rivera\n\nPlease accept if you can join.\n\n\u2014 Alex (via inboxHero demo)\n",
+  "cited_message_ids": [
+    "msg_002"
+  ],
+  "status": "queued",
+  "approved_at": "2026-09-22T14:33:56Z",
+  "undo_until": "2026-09-22T14:34:01Z",
+  "committed_at": null
+}

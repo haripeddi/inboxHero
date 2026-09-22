@@ -1,0 +1,17 @@
+{
+  "outbox_id": "out_msg_064",
+  "in_reply_to": "msg_064",
+  "thread_id": "thr_budget",
+  "from": "Alex Rivera <alex.rivera@northstarlabs.com>",
+  "to": "Devon Ruiz <devon.ruiz@northstarlabs.com>",
+  "subject": "Re: Approval needed: ProtoForge AI annual subscription",
+  "body": "Devon \u2014 confirming the figure from earlier in this thread: ProtoForge AI is $20,000 annual. Per my standing triage prefs, I don't auto-approve spend over $5k \u2014 I'm escalating this to Priya Shah (CFO) for approval and will confirm the PO as soon as she signs off. InfoSec clearance is noted; please hold the vendor seats meantime.",
+  "cited_message_ids": [
+    "msg_009",
+    "msg_002"
+  ],
+  "status": "sent",
+  "approved_at": "2026-09-22T17:19:28Z",
+  "undo_until": "2026-09-22T17:19:33Z",
+  "committed_at": "2026-09-22T17:19:33Z"
+}

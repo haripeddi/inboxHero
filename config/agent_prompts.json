@@ -1,0 +1,65 @@
+{
+  "prompts": [
+    {
+      "id": "compose_reply",
+      "label": "Reply",
+      "mode": "reply",
+      "description": "Task prompt when user clicks Reply",
+      "user_template": "Write a grounded reply for Alex Rivera.\n\nSubject: {subject}\nFrom: {from}\nTo: {to}\n\nThread:\n{thread}\n\nStanding prefs:\n{prefs}\n\nRules: cite msg_ ids only from the thread; never invent amounts or approvals; if spend >= $5k say you will escalate to Priya.",
+      "enabled": true,
+      "seeded": true,
+      "trigger_keywords": []
+    },
+    {
+      "id": "compose_reply_all",
+      "label": "Reply all",
+      "mode": "reply_all",
+      "description": "Task prompt when user clicks Reply all",
+      "user_template": "Write a grounded reply-all for Alex Rivera to all participants.\n\nSubject: {subject}\nFrom: {from}\nTo (reply-all): {to}\n\nThread:\n{thread}\n\nStanding prefs:\n{prefs}\n\nAcknowledge each open ask briefly. Cite msg_ ids. Do not auto-approve spend.",
+      "enabled": true,
+      "seeded": true
+    },
+    {
+      "id": "compose_cc",
+      "label": "CC",
+      "mode": "cc",
+      "description": "Task prompt when composing with CC",
+      "user_template": "Write a grounded reply and note who is CC'd and why.\n\nSubject: {subject}\nFrom: {from}\nTo: {to}\nCC: {cc}\n\nThread:\n{thread}\n\nPrefs:\n{prefs}\n\nCite msg_ ids. Keep the body professional and grounded.",
+      "enabled": true,
+      "seeded": true
+    },
+    {
+      "id": "compose_bcc",
+      "label": "BCC",
+      "mode": "bcc",
+      "description": "Task prompt when composing with BCC",
+      "user_template": "Write a grounded reply. BCC recipients ({bcc}) should not be mentioned in the body.\n\nSubject: {subject}\nFrom: {from}\nTo: {to}\nBCC: {bcc}\n\nThread:\n{thread}\n\nPrefs:\n{prefs}\n\nCite msg_ ids.",
+      "enabled": true,
+      "seeded": true
+    },
+    {
+      "id": "uncertain_triage",
+      "label": "Uncertain triage",
+      "mode": "uncertain",
+      "description": "Used when the agent cannot decide next action / lacks evidence",
+      "user_template": "Evidence is thin or conflicting for this message.\n\nSubject: {subject}\nFrom: {from}\n\nThread:\n{thread}\n\nPrefs:\n{prefs}\n\nRespond with: (1) what is known with msg_ cites, (2) what is missing, (3) recommend hold for human \u2014 do not invent facts.",
+      "trigger_keywords": [
+        "unclear",
+        "maybe",
+        "not sure",
+        "insufficient"
+      ],
+      "enabled": true,
+      "seeded": true
+    },
+    {
+      "id": "refuse_high_stakes",
+      "label": "High-stakes refuse",
+      "mode": "high_stakes",
+      "description": "Spend / legal / approval holds",
+      "user_template": "This thread involves high-stakes spend or approval.\n\nSubject: {subject}\nThread:\n{thread}\n\nPrefs:\n{prefs}\n\nDraft a short reply that refuses auto-approval, cites the spend figure from mail if present, and escalates per prefs (Priya / CFO). Cite msg_ ids.",
+      "enabled": true,
+      "seeded": true
+    }
+  ]
+}

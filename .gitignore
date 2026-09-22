@@ -1,0 +1,22 @@
+# Runtime / submission artifacts that may be regenerated
+.ground_truth.json
+__pycache__/
+*.pyc
+.DS_Store
+indexes/inbox_vectors/embeddings.npy
+indexes/inbox_vectors/meta.json
+mailbox_state.json
+logs/gated_decisions.jsonl
+logs/hostile_refusals.jsonl
+logs/cap_x3_trace.jsonl
+logs/compose_actions.jsonl
+memory/standing_instructions.json
+dashboard_data.json
+dashboard.html
+.venv/
+outputs/
+.env
+
+# Keep sample outbox JSON and root trace.jsonl for zip submission when present;
+# ignore only local scratch if needed:
+# outbox/*.json  — intentionally tracked for submission packaging when generated

@@ -1,0 +1,9 @@
+{"ts": "2026-09-22T17:19:20.003179+00:00", "event": "full_run_start", "llm": "ollama/llama3.2"}
+{"ts": "2026-09-22T17:19:20.005596+00:00", "event": "pending_built", "count": 60}
+{"ts": "2026-09-22T17:19:20.006852+00:00", "event": "outbox_write", "path": "outbox/out_msg_074.json", "message_id": "msg_074"}
+{"ts": "2026-09-22T17:19:20.007047+00:00", "event": "full_run_end", "outbox_writes": 1, "pending_count": 60}
+{"ts": "2026-09-22T17:20:27.630448+00:00", "event": "run_actions_execute", "outbox": ["out_compose_msg_064_reply_all", "out_invite_cal_007", "out_msg_064", "out_msg_074"]}
+{"ts": "2026-09-22T17:20:27.630556+00:00", "event": "full_run_packaged", "outbox_count": 4}
+{"ts": "2026-09-22T17:27:29.931195+00:00", "event": "compose_send", "message_id": "msg_034", "mode": "reply", "outbox": "outbox/out_compose_msg_034_reply.json", "learned_keys": []}
+{"ts": "2026-09-22T17:28:07.606537+00:00", "event": "compose_send", "message_id": "msg_024", "mode": "reply_all", "outbox": "outbox/out_compose_msg_024_reply_all.json", "learned_keys": ["reply_style_preference"]}
+{"ts": "2026-09-22T17:29:10.612287+00:00", "event": "compose_send", "message_id": "msg_029", "mode": "reply", "outbox": "outbox/out_compose_msg_029_reply.json", "learned_keys": ["last_edited_compose_style"]}

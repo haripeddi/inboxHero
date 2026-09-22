@@ -1,0 +1,120 @@
+{
+  "workspace": "Northstar Labs",
+  "owner": "Alex Rivera <alex.rivera@northstarlabs.com>",
+  "channels": [
+    {
+      "id": "C_EXEC_PREP",
+      "name": "exec-prep",
+      "messages": [
+        {
+          "id": "S001",
+          "ts": "2026-09-08T17:30:00Z",
+          "user": "Chief of Staff",
+          "text": "Board meeting 9/18 pre-read outline from Maya: retention, NRR, three risk bullets max. Alex owns product risk narrative."
+        },
+        {
+          "id": "S002",
+          "ts": "2026-09-11T15:10:00Z",
+          "user": "Nina Cho",
+          "text": "Charts in Board Q3 retention v0.3 are ready. Need Alex talking points / slide lock by Tue EOD."
+        },
+        {
+          "id": "S003",
+          "ts": "2026-09-12T08:25:00Z",
+          "user": "Maya Chen",
+          "text": "Confirm: keep Acme churn risk visible on the board deck — do not bury it."
+        }
+      ]
+    },
+    {
+      "id": "C_INC",
+      "name": "inc-2026-09",
+      "messages": [
+        {
+          "id": "S010",
+          "ts": "2026-09-07T06:15:00Z",
+          "user": "Jamie Ortiz",
+          "text": "SEV-1: Pulse API 5xx. ~10% active users impacted. Investigating rate-limiter config push at 05:52 UTC."
+        },
+        {
+          "id": "S011",
+          "ts": "2026-09-07T07:20:00Z",
+          "user": "Jamie Ortiz",
+          "text": "Rollback complete 07:18 UTC. Duration 86 minutes. External statement must stick to facts only."
+        },
+        {
+          "id": "S012",
+          "ts": "2026-09-08T11:05:00Z",
+          "user": "Aisha Rahman",
+          "text": "CS holding customer email until Product VP signs RCA (10% users, 86 min, rate-limiter config)."
+        }
+      ]
+    },
+    {
+      "id": "C_UX_DATA",
+      "name": "ux-data-joint",
+      "messages": [
+        {
+          "id": "S020",
+          "ts": "2026-09-08T14:20:00Z",
+          "user": "Quinn Avery",
+          "text": "Core UX blocked: Data Infra deprioritized event-schema dependency for Q4."
+        },
+        {
+          "id": "S021",
+          "ts": "2026-09-09T09:45:00Z",
+          "user": "Quinn Avery",
+          "text": "OKR weights: activation KR 0.4 vs warehouse cost KR 0.2 — we should restore the dependency."
+        },
+        {
+          "id": "S022",
+          "ts": "2026-09-10T08:20:00Z",
+          "user": "Reese Kim",
+          "text": "Can free 1 engineer next week if Product confirms activation still outranks cost after board pack."
+        }
+      ]
+    },
+    {
+      "id": "C_LEGAL_GTM",
+      "name": "legal-gtm",
+      "messages": [
+        {
+          "id": "S030",
+          "ts": "2026-09-09T14:25:00Z",
+          "user": "Dana Okada",
+          "text": "Claims review pending on AI-assisted insights wording — brochure blocked until rewrite."
+        },
+        {
+          "id": "S031",
+          "ts": "2026-09-11T15:35:00Z",
+          "user": "Dana Okada",
+          "text": "Legal approval granted after softclaim rewrite. #legal-gtm green."
+        },
+        {
+          "id": "S032",
+          "ts": "2026-09-11T11:05:00Z",
+          "user": "QA Signoff",
+          "text": "QA green for Insights v2 build 1.4.2 — both P1s verified."
+        }
+      ]
+    },
+    {
+      "id": "C_ENG",
+      "name": "eng-platform",
+      "messages": [
+        {
+          "id": "S040",
+          "ts": "2026-09-10T13:20:00Z",
+          "user": "Jamie Ortiz",
+          "text": "Migration delay proposal: accept 3 weeks tech debt to hit Sep 18 launch; cleanup sprint week of Sep 22 required."
+        },
+        {
+          "id": "S041",
+          "ts": "2026-09-10T14:45:00Z",
+          "user": "Jordan Lee",
+          "text": "Launch risk sync Thu 11:00am conflicts with promo committee — need Alex call on delay vs slip launch."
+        }
+      ]
+    }
+  ]
+}

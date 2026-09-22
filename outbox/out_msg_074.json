@@ -1,0 +1,17 @@
+{
+  "outbox_id": "out_msg_074",
+  "in_reply_to": "msg_074",
+  "thread_id": "thr_partner",
+  "from": "Alex Rivera <alex.rivera@northstarlabs.com>",
+  "to": "Taylor Kim <taylor.kim@databridge.io>",
+  "subject": "Re: Sign-off: open public API endpoints for DataBridge",
+  "body": "Taylor \u2014 thanks for the nudge. To be precise: Option A (from earlier in this thread) is native OAuth + scoped public endpoints. Architect capacity for that path is tight through Insights v2, so I'm not ready to commit to A this sprint. Let's park on Option B (partner webhook) as the interim path and revisit native OAuth once launch lands. I'll confirm marketplace featuring separately.",
+  "cited_message_ids": [
+    "msg_012",
+    "msg_028"
+  ],
+  "status": "queued",
+  "approved_at": "2026-09-22T17:19:20Z",
+  "undo_until": "2026-09-22T17:19:25Z",
+  "committed_at": null
+}

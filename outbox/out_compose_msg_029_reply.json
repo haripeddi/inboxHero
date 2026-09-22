@@ -1,0 +1,25 @@
+{
+  "outbox_id": "out_compose_msg_029_reply",
+  "in_reply_to": "msg_029",
+  "thread_id": "thr_blocker",
+  "from": "Alex Rivera <alex.rivera@northstarlabs.com>",
+  "to": "Quinn Avery <quinn.avery@northstarlabs.com>",
+  "subject": "Re: Blocked: Data Infra deprioritized Core UX Q4 dependency",
+  "body": "Subject: Re: Blocked: Data Infra deprioritized Core UX Q4 dependency\n\nHi Quinn,\n\nI've reviewed the thread and I agree that we need to unblock the event-schema dependency for Q4. I'll schedule a 30-minute joint sync with Reese and Jordan to discuss the roadmap impact and find a solution.\n\nPlease let me know a suitable time slot for the sync, and I'll make sure to bring the necessary information. Move this iniative to Q3, let's not talk anything now.\n\nBest,\nAlex",
+  "cited_message_ids": [
+    "msg_029",
+    "msg_033",
+    "msg_040",
+    "msg_047",
+    "msg_055",
+    "msg_062",
+    "msg_069",
+    "msg_079",
+    "msg_092",
+    "msg_095"
+  ],
+  "status": "queued",
+  "approved_at": "2026-09-22T17:29:10Z",
+  "undo_until": "2026-09-22T17:29:15Z",
+  "committed_at": null
+}

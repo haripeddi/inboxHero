@@ -1,0 +1,87 @@
+{
+  "owner": "Alex Rivera <alex.rivera@northstarlabs.com>",
+  "timezone": "America/Los_Angeles",
+  "events": [
+    {
+      "id": "cal_001",
+      "title": "1:1 Maya / Alex",
+      "start": "2026-09-09T10:00:00-07:00",
+      "end": "2026-09-09T10:30:00-07:00",
+      "attendees": [
+        "Maya Chen",
+        "Alex Rivera"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "cal_002",
+      "title": "Promo committee (Priya Candace)",
+      "start": "2026-09-10T11:00:00-07:00",
+      "end": "2026-09-10T11:45:00-07:00",
+      "attendees": [
+        "Alex Rivera",
+        "Riley Park",
+        "Pat Okonkwo"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "cal_003",
+      "title": "Launch risk sync \u2014 migration vs launch",
+      "start": "2026-09-10T11:00:00-07:00",
+      "end": "2026-09-10T12:00:00-07:00",
+      "attendees": [
+        "Alex Rivera",
+        "Jamie Ortiz",
+        "Jordan Lee"
+      ],
+      "status": "tentative",
+      "notes": "Conflicts with promo committee \u2014 same slot"
+    },
+    {
+      "id": "cal_004",
+      "title": "Board meeting \u2014 Q3 retention + product risk",
+      "start": "2026-09-18T10:00:00-07:00",
+      "end": "2026-09-18T12:00:00-07:00",
+      "attendees": [
+        "Maya Chen",
+        "Alex Rivera",
+        "Priya Shah"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "cal_005",
+      "title": "Eng weekly (async preferred)",
+      "start": "2026-09-12T15:00:00-07:00",
+      "end": "2026-09-12T15:45:00-07:00",
+      "attendees": [
+        "Jordan Lee",
+        "Alex Rivera"
+      ],
+      "status": "optional"
+    },
+    {
+      "id": "cal_006",
+      "title": "Open focus block",
+      "start": "2026-09-12T09:00:00-07:00",
+      "end": "2026-09-12T10:00:00-07:00",
+      "attendees": [
+        "Alex Rivera"
+      ],
+      "status": "free"
+    },
+    {
+      "id": "cal_007",
+      "title": "Demo sync execute",
+      "start": "2026-09-16T15:00:00-07:00",
+      "end": "2026-09-16T15:30:00-07:00",
+      "attendees": [
+        "Maya Chen",
+        "Alex Rivera"
+      ],
+      "status": "tentative",
+      "notes": "Synthetic invite from inboxHero demo UI"
+    }
+  ]
+}

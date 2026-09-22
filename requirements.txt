@@ -1,0 +1,8 @@
+numpy>=1.26
+# Optional: richer semantic embeddings (index falls back to TF-IDF if missing)
+sentence-transformers>=2.2.0
+# Part 8 — CrewAI agents (LLM via Ollama llama3.2 by default)
+crewai>=0.80.0
+# X4 — interactive Gmail demo UI
+fastapi>=0.115.0
+uvicorn>=0.30.0

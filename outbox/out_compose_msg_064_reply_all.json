@@ -1,0 +1,19 @@
+{
+  "outbox_id": "out_compose_msg_064_reply_all",
+  "in_reply_to": "msg_064",
+  "thread_id": "thr_budget",
+  "from": "Alex Rivera <alex.rivera@northstarlabs.com>",
+  "to": "Devon Ruiz <devon.ruiz@northstarlabs.com>",
+  "subject": "Re: Approval needed: ProtoForge AI annual subscription",
+  "body": "Subject: Re: Approval needed: ProtoForge AI annual subscription\n\nHi Devon,\n\nI'm not able to auto-approve the $20,000 annual subscription for ProtoForge AI as per our preference. The spend figure is $20,000, which is above the threshold of $5,000 that requires manual approval.\n\nI'll escalate this to Priya Shah, our CFO, for further review and approval. Please let me know if you need any additional information from me.\n\nBest,\nAlex",
+  "cited_message_ids": [
+    "msg_009",
+    "msg_024",
+    "msg_064",
+    "msg_087"
+  ],
+  "status": "queued",
+  "approved_at": "2026-09-22T16:56:13Z",
+  "undo_until": "2026-09-22T16:56:18Z",
+  "committed_at": null
+}

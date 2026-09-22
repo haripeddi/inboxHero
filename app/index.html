@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>inboxHero — Mail</title>
+  <link rel="stylesheet" href="/app/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">inboxHero</span>
+        <span class="brand-sub">Mail</span>
+      </div>
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="Search mail" autocomplete="off" />
+      </div>
+    </header>
+
+    <div id="learn-toasts" class="learn-toasts" aria-live="polite"></div>
+
+    <div class="shell">
+      <nav class="sidebar" aria-label="Mailbox">
+        <div class="nav-section-label">Inbox</div>
+        <button type="button" class="nav-item active" data-view="primary">
+          <span class="nav-icon">□</span> Primary
+          <span class="nav-count" id="count-primary">0</span>
+        </button>
+        <button type="button" class="nav-item" data-view="pending">
+          <span class="nav-icon">◇</span> Pending actions
+          <span class="nav-count" id="count-pending">0</span>
+        </button>
+        <button type="button" class="nav-item" data-view="commitments">
+          <span class="nav-icon">▣</span> Commitments
+          <span class="nav-count" id="count-commitments">0</span>
+        </button>
+        <button type="button" class="nav-item" data-view="flagged">
+          <span class="nav-icon">!</span> Flagged
+          <span class="nav-count" id="count-flagged">0</span>
+        </button>
+        <div class="nav-section-label">Folders</div>
+        <button type="button" class="nav-item" data-view="spam">
+          <span class="nav-icon">⚠</span> Spam
+          <span class="nav-count" id="count-spam">0</span>
+        </button>
+        <button type="button" class="nav-item" data-view="drafts">
+          <span class="nav-icon">✎</span> Drafts
+          <span class="nav-count" id="count-drafts">0</span>
+        </button>
+        <button type="button" class="nav-item" data-view="outbox">
+          <span class="nav-icon">↗</span> Outbox
+          <span class="nav-count" id="count-outbox">0</span>
+        </button>
+        <p class="nav-footnote">R6 static dashboard stays separate for grading.</p>
+      </nav>
+
+      <section class="list-pane" id="list-pane">
+        <div class="list-header" id="list-header">Primary</div>
+        <div class="list-body" id="list-body"></div>
+      </section>
+
+      <section class="read-pane" id="read-pane">
+        <div class="empty-read" id="empty-read">
+          <h2>Select a message</h2>
+          <p>Primary is the active inbox. Pending lists disposition-gated next actions with citations. Spam / Drafts / Outbox mirror live artifacts.</p>
+        </div>
+        <div class="read-content hidden" id="read-content">
+          <div class="read-toolbar">
+            <button type="button" class="btn" id="btn-reply">Reply</button>
+            <button type="button" class="btn" id="btn-reply-all">Reply all</button>
+            <button type="button" class="btn" id="btn-cc">CC</button>
+            <button type="button" class="btn" id="btn-bcc">BCC</button>
+            <button type="button" class="btn ghost" id="btn-invite-from-mail">Invite about this…</button>
+            <button type="button" class="btn primary hidden" id="btn-pending-approve">Approve pending</button>
+          </div>
+          <h1 class="read-subject" id="read-subject"></h1>
+          <div class="read-meta" id="read-meta"></div>
+          <div class="read-badges" id="read-badges"></div>
+          <div class="pending-why hidden" id="pending-why"></div>
+          <pre class="read-body" id="read-body"></pre>
+          <div class="draft-box hidden" id="draft-box">
+            <h3>Draft ready</h3>
+            <pre id="draft-body"></pre>
+            <div class="cite-row" id="draft-cites"></div>
+            <div class="source-row" id="draft-sources"></div>
+          </div>
+          <div class="compose-panel hidden" id="compose-panel">
+            <div class="compose-header">
+              <strong id="compose-mode-label">Reply</strong>
+              <span class="compose-prompt-id" id="compose-prompt-id"></span>
+              <button type="button" class="btn ghost" id="compose-close">×</button>
+            </div>
+            <label>To <input id="compose-to" type="text" /></label>
+            <label id="compose-cc-wrap" class="hidden">CC <input id="compose-cc" type="text" /></label>
+            <label id="compose-bcc-wrap" class="hidden">BCC <input id="compose-bcc" type="text" /></label>
+            <label>Body <textarea id="compose-body" rows="8"></textarea></label>
+            <div class="cite-row" id="compose-cites"></div>
+            <div class="source-row" id="compose-sources"></div>
+            <p class="compose-status" id="compose-status"></p>
+            <div class="modal-actions">
+              <button type="button" class="btn" id="compose-regenerate">Regenerate</button>
+              <button type="button" class="btn primary" id="compose-send">Send</button>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-view hidden" id="calendar-view">
+          <div class="cal-toolbar">
+            <button type="button" class="btn ghost" id="cal-prev">‹</button>
+            <h2 id="cal-title">Commitments</h2>
+            <button type="button" class="btn ghost" id="cal-next">›</button>
+          </div>
+          <div class="cal-conflict-banner hidden" id="cal-conflict-banner"></div>
+          <div class="cal-grid" id="cal-grid"></div>
+          <div class="cal-detail" id="cal-detail"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Welcome / Agent Mode modal -->
+  <div class="modal-backdrop hidden" id="welcome-modal" role="dialog" aria-modal="true">
+    <div class="modal welcome-modal">
+      <div id="welcome-working" class="welcome-phase">
+        <div class="assistant-pulse" aria-hidden="true"></div>
+        <h2>Working on your inbox…</h2>
+        <p class="modal-lead">inboxHero is optimizing your work — triaging mail, staging drafts, and gating irreversible actions.</p>
+        <div class="action-ticker" aria-live="polite">
+          <div class="action-ticker-track" id="action-ticker-track"></div>
+        </div>
+        <ul class="action-feed" id="action-feed"></ul>
+        <p class="working-status" id="working-status">Starting…</p>
+      </div>
+      <div id="welcome-summary" class="welcome-phase hidden">
+        <h2>Agent Mode On</h2>
+        <p class="modal-lead" id="welcome-lead"></p>
+        <ul class="stat-list" id="welcome-stats"></ul>
+        <p class="modal-note" id="welcome-note"></p>
+        <div class="modal-actions">
+          <button type="button" class="btn primary" id="welcome-close">Start browsing</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Invite modal (opened from read toolbar only) -->
+  <div class="modal-backdrop hidden" id="invite-modal" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h2>Invite colleagues</h2>
+      <p class="modal-lead">Mock invite: stages <code>calendar.json</code> + <code>outbox/</code> (Part 4 gate). Dry-run first.</p>
+      <label>Title <input id="invite-title" type="text" value="Product sync — inboxHero demo" /></label>
+      <label>Start <input id="invite-start" type="datetime-local" /></label>
+      <label>End <input id="invite-end" type="datetime-local" /></label>
+      <label>Attendees (comma-separated)
+        <input id="invite-attendees" type="text" value="Maya Chen, Jordan Lee, Priya Shah, Alex Rivera" />
+      </label>
+      <label>Notes <textarea id="invite-notes" rows="2">Synthetic calendar invite from demo UI</textarea></label>
+      <pre class="invite-preview hidden" id="invite-preview"></pre>
+      <div class="modal-actions">
+        <button type="button" class="btn" id="invite-preview-btn">Preview (dry-run)</button>
+        <button type="button" class="btn primary" id="invite-execute-btn">Execute invite</button>
+        <button type="button" class="btn ghost" id="invite-close">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chatbot -->
+  <button type="button" class="chat-fab" id="chat-fab" aria-label="Open assistant">Ask</button>
+  <aside class="chat-drawer hidden" id="chat-drawer" aria-label="Assistant">
+    <header class="chat-header">
+      <strong>inboxHero assistant</strong>
+      <button type="button" class="btn ghost" id="chat-close">×</button>
+    </header>
+    <p class="chat-hint" id="chat-hint">Ask about the selected email (grounded on inbox + prefs).</p>
+    <div class="chat-log" id="chat-log"></div>
+    <form class="chat-form" id="chat-form">
+      <input id="chat-input" type="text" placeholder="Ask about this email…" autocomplete="off" />
+      <button type="submit" class="btn primary">Send</button>
+    </form>
+  </aside>
+
+  <script src="/app/app.js"></script>
+</body>
+</html>

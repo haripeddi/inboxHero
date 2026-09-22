@@ -1,0 +1,86 @@
+{
+  "retrieval_method": "hybrid_thread_walk_plus_vector",
+  "drafts": [
+    {
+      "target_id": "msg_064",
+      "status": "drafted",
+      "draft_body": "Devon \u2014 confirming the figure from earlier in this thread: ProtoForge AI is $20,000 annual. Per my standing triage prefs, I don't auto-approve spend over $5k \u2014 I'm escalating this to Priya Shah (CFO) for approval and will confirm the PO as soon as she signs off. InfoSec clearance is noted; please hold the vendor seats meantime.",
+      "cited_message_ids": [
+        "msg_009",
+        "msg_002"
+      ],
+      "retrieval": {
+        "thread_ids_read": [
+          "msg_009",
+          "msg_024",
+          "msg_064",
+          "msg_087"
+        ],
+        "vector_hit_ids": [
+          "msg_009",
+          "msg_087",
+          "msg_024",
+          "msg_005",
+          "msg_001",
+          "msg_004",
+          "msg_027",
+          "msg_002",
+          "msg_050",
+          "msg_055"
+        ]
+      },
+      "notes": "Amount $20,000 from msg_009; spend policy from msg_002"
+    },
+    {
+      "target_id": "msg_074",
+      "status": "drafted",
+      "draft_body": "Taylor \u2014 thanks for the nudge. To be precise: Option A (from earlier in this thread) is native OAuth + scoped public endpoints. Architect capacity for that path is tight through Insights v2, so I'm not ready to commit to A this sprint. Let's park on Option B (partner webhook) as the interim path and revisit native OAuth once launch lands. I'll confirm marketplace featuring separately.",
+      "cited_message_ids": [
+        "msg_012",
+        "msg_028"
+      ],
+      "retrieval": {
+        "thread_ids_read": [
+          "msg_012",
+          "msg_028",
+          "msg_074",
+          "msg_090"
+        ],
+        "vector_hit_ids": [
+          "msg_028",
+          "msg_012",
+          "msg_090",
+          "msg_094",
+          "msg_060",
+          "msg_095",
+          "msg_013",
+          "msg_089",
+          "msg_030",
+          "msg_086"
+        ]
+      },
+      "notes": "Option A definition from msg_012; capacity from msg_028"
+    },
+    {
+      "target_id": "unanswerable_demo",
+      "status": "insufficient_evidence",
+      "draft_body": null,
+      "cited_message_ids": [],
+      "retrieval": {
+        "thread_ids_read": [
+          "msg_001",
+          "msg_002",
+          "msg_003"
+        ],
+        "vector_hit_ids": [
+          "msg_020",
+          "msg_080",
+          "msg_085",
+          "msg_027",
+          "msg_034"
+        ]
+      },
+      "reason": "Requested fact (Q2 board NPS) not present in inbox.json"
+    }
+  ]
+}

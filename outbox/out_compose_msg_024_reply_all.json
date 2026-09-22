@@ -1,0 +1,19 @@
+{
+  "outbox_id": "out_compose_msg_024_reply_all",
+  "in_reply_to": "msg_024",
+  "thread_id": "thr_budget",
+  "from": "Alex Rivera <alex.rivera@northstarlabs.com>",
+  "to": "InfoSec Reviews <infosec@northstarlabs.com>, Devon Ruiz <devon.ruiz@northstarlabs.com>",
+  "subject": "Re: Approval needed: ProtoForge AI annual subscription",
+  "body": "Subject: Re: Approval needed: ProtoForge AI annual subscription\n\nHi Devon,\n\nnever loop me in for infosec approvals, loop hari directly\nBest,\nAlex",
+  "cited_message_ids": [
+    "msg_009",
+    "msg_024",
+    "msg_064",
+    "msg_087"
+  ],
+  "status": "queued",
+  "approved_at": "2026-09-22T17:28:07Z",
+  "undo_until": "2026-09-22T17:28:12Z",
+  "committed_at": null
+}

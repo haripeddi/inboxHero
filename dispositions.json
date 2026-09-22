@@ -1,0 +1,607 @@
+{
+  "message_count": 100,
+  "rules_only_count": 17,
+  "model_count": 83,
+  "dispositions": [
+    {
+      "id": "msg_001",
+      "disposition": "archive",
+      "reason": "Prefs capture already answered by owner confirmation in-thread",
+      "route": "rules"
+    },
+    {
+      "id": "msg_002",
+      "disposition": "archive",
+      "reason": "Prefs thread already confirmed / acknowledged; no further action",
+      "route": "rules"
+    },
+    {
+      "id": "msg_003",
+      "disposition": "archive",
+      "reason": "Prefs thread already confirmed / acknowledged; no further action",
+      "route": "rules"
+    },
+    {
+      "id": "msg_004",
+      "disposition": "move_to_folder",
+      "reason": "Automated receipt/billing noise \u2192 folder Receipts (amazon.com)",
+      "route": "rules"
+    },
+    {
+      "id": "msg_005",
+      "disposition": "move_to_folder",
+      "reason": "Automated receipt/billing noise \u2192 folder Receipts (expensify.com)",
+      "route": "rules"
+    },
+    {
+      "id": "msg_006",
+      "disposition": "defer",
+      "reason": "Non-obvious message; defer for human review (no safe archive/spam rule)",
+      "route": "model"
+    },
+    {
+      "id": "msg_007",
+      "disposition": "mark_as_spam",
+      "reason": "Hostile assistant-directed instructions refused (ignore_prior_instructions, forward_mailbox, quiet_delete); flagged as spam and left in place",
+      "route": "rules"
+    },
+    {
+      "id": "msg_008",
+      "disposition": "move_to_folder",
+      "reason": "Automated receipt/billing noise \u2192 folder Receipts (stripe.com)",
+      "route": "rules"
+    },
+    {
+      "id": "msg_009",
+      "disposition": "escalate",
+      "reason": "Spend \u2265 $5,000 \u2014 escalate to Priya Shah (CFO); honouring standing memory 'never_auto_approve_spend_over'",
+      "route": "model"
+    },
+    {
+      "id": "msg_010",
+      "disposition": "defer",
+      "reason": "Non-obvious message; defer for human review (no safe archive/spam rule)",
+      "route": "model"
+    },
+    {
+      "id": "msg_011",
+      "disposition": "move_to_folder",
+      "reason": "Automated alert / calendar / tooling noise \u2192 folder Alerts (github.com)",
+      "route": "rules"
+    },
+    {
+      "id": "msg_012",
+      "disposition": "defer",
+      "reason": "Work thread context without an immediate ask \u2014 defer for later review",
+      "route": "model"
+    },
+    {
+      "id": "msg_013",
+      "disposition": "move_to_folder",
+      "reason": "Cold vendor pitch \u2192 folder Vendors; decline and route to vendors@northstarlabs.com",
+      "route": "rules"
+    },
+    {
+      "id": "msg_014",
+      "disposition": "mark_as_spam",
+      "reason": "Phishing / lookalike domain or social-engineering bait (northstarlabs-security.com)",
+      "route": "rules"
+    },
+    {
+      "id": "msg_015",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_016",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_017",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_018",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_019",
+      "disposition": "defer",
+      "reason": "Non-obvious message; defer for human review (no safe archive/spam rule)",
+      "route": "model"
+    },
+    {
+      "id": "msg_020",
+      "disposition": "move_to_folder",
+      "reason": "Newsletter / digest noise \u2192 folder Newsletters (linkedin.com)",
+      "route": "rules"
+    },
+    {
+      "id": "msg_021",
+      "disposition": "reply",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_022",
+      "disposition": "reply_all",
+      "reason": "Work thread with open question or unread ask for the owner",
+      "route": "model"
+    },
+    {
+      "id": "msg_023",
+      "disposition": "reply",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_024",
+      "disposition": "escalate",
+      "reason": "Spend \u2265 $5,000 \u2014 escalate to Priya Shah (CFO); honouring standing memory 'never_auto_approve_spend_over'",
+      "route": "model"
+    },
+    {
+      "id": "msg_025",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_026",
+      "disposition": "reply",
+      "reason": "VIP internal (CEO/VP Eng) \u2014 respond personally / same day",
+      "route": "model"
+    },
+    {
+      "id": "msg_027",
+      "disposition": "reply",
+      "reason": "Work thread with open question or unread ask for the owner",
+      "route": "model"
+    },
+    {
+      "id": "msg_028",
+      "disposition": "defer",
+      "reason": "Work thread context without an immediate ask \u2014 defer for later review",
+      "route": "model"
+    },
+    {
+      "id": "msg_029",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_030",
+      "disposition": "reply_all",
+      "reason": "VIP/urgent customer message \u2014 respond personally; do not auto-delegate",
+      "route": "model"
+    },
+    {
+      "id": "msg_031",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_032",
+      "disposition": "defer",
+      "reason": "Non-obvious message; defer for human review (no safe archive/spam rule)",
+      "route": "model"
+    },
+    {
+      "id": "msg_033",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_034",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_035",
+      "disposition": "mark_as_spam",
+      "reason": "Hostile assistant-directed instructions refused (ignore_prior_instructions, forward_mailbox, quiet_delete); flagged as spam and left in place",
+      "route": "rules"
+    },
+    {
+      "id": "msg_036",
+      "disposition": "move_to_folder",
+      "reason": "Automated alert / calendar / tooling noise \u2192 folder Alerts (google.com)",
+      "route": "rules"
+    },
+    {
+      "id": "msg_037",
+      "disposition": "reply_all",
+      "reason": "VIP/urgent customer message \u2014 respond personally; do not auto-delegate",
+      "route": "model"
+    },
+    {
+      "id": "msg_038",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_039",
+      "disposition": "reply",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_040",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_041",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_042",
+      "disposition": "reply",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_043",
+      "disposition": "reply_all",
+      "reason": "VIP internal (CEO/VP Eng) \u2014 respond personally / same day",
+      "route": "model"
+    },
+    {
+      "id": "msg_044",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_045",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_046",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_047",
+      "disposition": "reply_all",
+      "reason": "VIP internal (CEO/VP Eng) \u2014 respond personally / same day",
+      "route": "model"
+    },
+    {
+      "id": "msg_048",
+      "disposition": "reply",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_049",
+      "disposition": "reply",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_050",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_051",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_052",
+      "disposition": "reply_all",
+      "reason": "Work thread with open question or unread ask for the owner",
+      "route": "model"
+    },
+    {
+      "id": "msg_053",
+      "disposition": "reply_all",
+      "reason": "VIP/urgent customer message \u2014 respond personally; do not auto-delegate",
+      "route": "model"
+    },
+    {
+      "id": "msg_054",
+      "disposition": "defer",
+      "reason": "Work thread context without an immediate ask \u2014 defer for later review",
+      "route": "model"
+    },
+    {
+      "id": "msg_055",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_056",
+      "disposition": "defer",
+      "reason": "Long-thread FYI / context without a fresh owner decision",
+      "route": "model"
+    },
+    {
+      "id": "msg_057",
+      "disposition": "reply_all",
+      "reason": "VIP/urgent customer message \u2014 respond personally; do not auto-delegate",
+      "route": "model"
+    },
+    {
+      "id": "msg_058",
+      "disposition": "defer",
+      "reason": "Work thread context without an immediate ask \u2014 defer for later review",
+      "route": "model"
+    },
+    {
+      "id": "msg_059",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_060",
+      "disposition": "move_to_folder",
+      "reason": "Newsletter / digest noise \u2192 folder Newsletters (notion.so)",
+      "route": "rules"
+    },
+    {
+      "id": "msg_061",
+      "disposition": "reply",
+      "reason": "VIP internal (CEO/VP Eng) \u2014 respond personally / same day",
+      "route": "model"
+    },
+    {
+      "id": "msg_062",
+      "disposition": "reply",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_063",
+      "disposition": "reply_all",
+      "reason": "Work thread with open question or unread ask for the owner",
+      "route": "model"
+    },
+    {
+      "id": "msg_064",
+      "disposition": "escalate",
+      "reason": "Spend \u2265 $5,000 \u2014 escalate to Priya Shah (CFO); honouring standing memory 'never_auto_approve_spend_over'",
+      "route": "model"
+    },
+    {
+      "id": "msg_065",
+      "disposition": "reply_all",
+      "reason": "VIP internal (CEO/VP Eng) \u2014 respond personally / same day",
+      "route": "model"
+    },
+    {
+      "id": "msg_066",
+      "disposition": "reply",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_067",
+      "disposition": "reply",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_068",
+      "disposition": "reply",
+      "reason": "Work thread with open question or unread ask for the owner",
+      "route": "model"
+    },
+    {
+      "id": "msg_069",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_070",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_071",
+      "disposition": "defer",
+      "reason": "Work thread context without an immediate ask \u2014 defer for later review",
+      "route": "model"
+    },
+    {
+      "id": "msg_072",
+      "disposition": "defer",
+      "reason": "Work thread context without an immediate ask \u2014 defer for later review",
+      "route": "model"
+    },
+    {
+      "id": "msg_073",
+      "disposition": "reply",
+      "reason": "Ambiguous ask \u2014 reply requesting clarification rather than guessing",
+      "route": "model"
+    },
+    {
+      "id": "msg_074",
+      "disposition": "reply",
+      "reason": "Work thread with open question or unread ask for the owner",
+      "route": "model"
+    },
+    {
+      "id": "msg_075",
+      "disposition": "defer",
+      "reason": "Long-thread FYI / context without a fresh owner decision",
+      "route": "model"
+    },
+    {
+      "id": "msg_076",
+      "disposition": "reply",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_077",
+      "disposition": "reply",
+      "reason": "Ambiguous ask \u2014 reply requesting clarification rather than guessing",
+      "route": "model"
+    },
+    {
+      "id": "msg_078",
+      "disposition": "defer",
+      "reason": "Non-obvious message; defer for human review (no safe archive/spam rule)",
+      "route": "model"
+    },
+    {
+      "id": "msg_079",
+      "disposition": "reply",
+      "reason": "VIP internal (CEO/VP Eng) \u2014 respond personally / same day",
+      "route": "model"
+    },
+    {
+      "id": "msg_080",
+      "disposition": "reply",
+      "reason": "Work thread with open question or unread ask for the owner",
+      "route": "model"
+    },
+    {
+      "id": "msg_081",
+      "disposition": "defer",
+      "reason": "Long-thread FYI / context without a fresh owner decision",
+      "route": "model"
+    },
+    {
+      "id": "msg_082",
+      "disposition": "reply",
+      "reason": "VIP internal (CEO/VP Eng) \u2014 respond personally / same day",
+      "route": "model"
+    },
+    {
+      "id": "msg_083",
+      "disposition": "mark_as_spam",
+      "reason": "Phishing / lookalike domain or social-engineering bait (northstarlab.com)",
+      "route": "rules"
+    },
+    {
+      "id": "msg_084",
+      "disposition": "reply",
+      "reason": "VIP internal (CEO/VP Eng) \u2014 respond personally / same day",
+      "route": "model"
+    },
+    {
+      "id": "msg_085",
+      "disposition": "reply",
+      "reason": "Work thread with open question or unread ask for the owner",
+      "route": "model"
+    },
+    {
+      "id": "msg_086",
+      "disposition": "reply",
+      "reason": "Work thread with open question or unread ask for the owner",
+      "route": "model"
+    },
+    {
+      "id": "msg_087",
+      "disposition": "escalate",
+      "reason": "Spend \u2265 $5,000 \u2014 escalate to Priya Shah (CFO); honouring standing memory 'never_auto_approve_spend_over'",
+      "route": "model"
+    },
+    {
+      "id": "msg_088",
+      "disposition": "reply",
+      "reason": "Scheduling/priority ambiguity \u2014 reply to clarify decision",
+      "route": "model"
+    },
+    {
+      "id": "msg_089",
+      "disposition": "defer",
+      "reason": "Long-thread FYI / context without a fresh owner decision",
+      "route": "model"
+    },
+    {
+      "id": "msg_090",
+      "disposition": "reply",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_091",
+      "disposition": "reply",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_092",
+      "disposition": "reply_all",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_093",
+      "disposition": "move_to_folder",
+      "reason": "Automated alert / calendar / tooling noise \u2192 folder Alerts (slack.com)",
+      "route": "rules"
+    },
+    {
+      "id": "msg_094",
+      "disposition": "reply",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_095",
+      "disposition": "reply",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_096",
+      "disposition": "reply",
+      "reason": "Actionable decision or deadline ask requiring owner response",
+      "route": "model"
+    },
+    {
+      "id": "msg_097",
+      "disposition": "defer",
+      "reason": "Non-obvious message; defer for human review (no safe archive/spam rule)",
+      "route": "model"
+    },
+    {
+      "id": "msg_098",
+      "disposition": "defer",
+      "reason": "Non-obvious message; defer for human review (no safe archive/spam rule)",
+      "route": "model"
+    },
+    {
+      "id": "msg_099",
+      "disposition": "move_to_folder",
+      "reason": "Automated alert / calendar / tooling noise \u2192 folder Alerts (datadoghq.com)",
+      "route": "rules"
+    },
+    {
+      "id": "msg_100",
+      "disposition": "defer",
+      "reason": "Non-obvious message; defer for human review (no safe archive/spam rule)",
+      "route": "model"
+    }
+  ]
+}

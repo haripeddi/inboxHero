@@ -1,0 +1,117 @@
+{
+  "student": "Hari Peddi, cert-aai-2026-06-0048",
+  "repo": "https://github.com/hari-peddi/inboxHero",
+  "system": {
+    "framework": "crewai",
+    "model": "config.py → ollama/llama3.2 (default); openai and gemini via INBOXHERO_LLM",
+    "messages_processed": 100,
+    "rule_handled": 17,
+    "dispositions": [
+      "reply",
+      "reply_all",
+      "archive",
+      "defer",
+      "delegate",
+      "escalate",
+      "mark_as_spam",
+      "move_to_folder"
+    ],
+    "retrieval": "hybrid_thread_walk_plus_vector",
+    "irreversible": ["send", "permanent_delete"],
+    "reversible": ["draft", "mark_read", "soft_delete", "archive", "label"],
+    "gate": "both",
+    "preference_demo": "msg_064: never auto-approve spend over $5k — escalate to Priya Shah"
+  },
+  "capabilities": [
+    {
+      "id": "R1",
+      "name": "Zero the inbox",
+      "tier": "B",
+      "claim": "Assigns exactly one disposition and reason to all 100 messages; obvious mail never reaches a model.",
+      "command": "python3 demo.py --cap R1",
+      "observable": "Writes dispositions.json with coverage for msg_001…msg_100; prints rules_only_count (17) and HOSTILE INBOX section.",
+      "evidence": "dispositions.json, logs/hostile_refusals.jsonl"
+    },
+    {
+      "id": "R2",
+      "name": "Grounded reply drafts (RAG)",
+      "tier": "B",
+      "claim": "Drafts replies only from retrieved mail; cites message ids; abstains when evidence is missing.",
+      "command": "python3 demo.py --cap R2",
+      "observable": "drafts.json: msg_064 drafted citing msg_009+$20,000 and msg_002 prefs; msg_074 cites Option A; unanswerable_demo has insufficient_evidence and null body.",
+      "evidence": "drafts.json, indexes/inbox_vectors/"
+    },
+    {
+      "id": "R3",
+      "name": "Gated irreversible actions",
+      "tier": "C",
+      "claim": "Dry-run by default; human approval on execute; sends only to outbox/ with undo window; logs every gated decision.",
+      "command": "python3 demo.py --cap R3",
+      "observable": "Dry-run prints proposed send/soft_delete/permanent_delete/archive; --execute --yes writes outbox/ and logs/gated_decisions.jsonl.",
+      "evidence": "outbox/, logs/gated_decisions.jsonl, mailbox_state.json"
+    },
+    {
+      "id": "R4",
+      "name": "Standing preferences after restart",
+      "tier": "C",
+      "claim": "Records never_auto_approve_spend_over; after exit/restart, msg_064 escalates to CFO.",
+      "command": "python3 demo.py --cap R4",
+      "observable": "apply prints disposition escalate with honoured_memory_key never_auto_approve_spend_over for msg_064.",
+      "evidence": "memory/standing_instructions.json"
+    },
+    {
+      "id": "R5",
+      "name": "Hostile inbox defense",
+      "tier": "B",
+      "claim": "Detects assistant-directed instructions, refuses them, logs refusal, leaves messages in place.",
+      "command": "python3 demo.py --cap R5",
+      "observable": "HOSTILE INBOX lists msg_007 and msg_035 with attempted actions; nothing written to outbox for them; still in inbox.json.",
+      "evidence": "logs/hostile_refusals.jsonl"
+    },
+    {
+      "id": "R6",
+      "name": "Three-pane run dashboard",
+      "tier": "B",
+      "claim": "Builds pending / flagged / commitments views from a completed run with multi-message cites and conflict callouts.",
+      "command": "python3 demo.py --cap R6",
+      "observable": "dashboard.html embeds dashboard_data.json; commitments include cmt_board_0918 citing two messages; overlapping Thu 11:00 meetings marked conflict.",
+      "evidence": "dashboard_data.json, dashboard.html"
+    },
+    {
+      "id": "X1",
+      "name": "Mark digests as read",
+      "tier": "A",
+      "claim": "CrewAI triage agent marks daily/weekly digest emails as read without touching VIP or urgent mail.",
+      "command": "python3 demo.py --cap X1",
+      "observable": "outputs/mark_read.json lists digest ids (e.g. weekly summaries); mailbox_state.read updated; Maya/Jordan messages absent.",
+      "evidence": "outputs/mark_read.json, mailbox_state.json"
+    },
+    {
+      "id": "X2",
+      "name": "Soft-delete phishing spam and ads",
+      "tier": "B",
+      "claim": "CrewAI cleanup agent soft-deletes phishing, spam, and cold ads; refuses Part 6 hostile messages.",
+      "command": "python3 demo.py --cap X2",
+      "observable": "outputs/soft_delete_batch.json: phishing/cold pitch soft_deleted; msg_007/msg_035 status refused and not in trash.",
+      "evidence": "outputs/soft_delete_batch.json, mailbox_state.json"
+    },
+    {
+      "id": "X3",
+      "name": "Agentic reply with Slack and calendar",
+      "tier": "C",
+      "claim": "CrewAI multi-agent run drafts a reply from email thread + slack.json + calendar.json + prefs; auto-stages VIP simple acks or holds high-stakes asks.",
+      "command": "python3 demo.py --cap X3",
+      "observable": "outputs/agent_reply.json for msg_085 decision auto_stage_outbox with cited_slack_ids and cited_calendar_ids; --hold-demo on msg_064 yields hold_for_human.",
+      "evidence": "outputs/agent_reply.json, logs/cap_x3_trace.jsonl, slack.json, calendar.json"
+    },
+    {
+      "id": "X4",
+      "name": "Interactive Gmail demo UI",
+      "tier": "B",
+      "claim": "Serves a white Gmail-like inbox with Agent Mode On landing, disposition-derived Pending actions with citations, Reply/Reply-all/CC/BCC Send-to-outbox with learn-from-edit toasts, and provider-agnostic chat via config.py.",
+      "command": "python3 demo.py --cap X4",
+      "observable": "Browser at /app/: Agent Mode On landing; Primary unread; Pending shows many disposition-gated rows with cite chips; compose Send writes outbox/ and may toast learned prefs; chat uses configured LLM provider.",
+      "evidence": "app/, scripts/serve_app.py, config.py, demo.py, outbox/, drafts.json, memory/standing_instructions.json, mailbox_state.json, trace.jsonl, logs/gated_decisions.jsonl"
+    }
+  ]
+}
